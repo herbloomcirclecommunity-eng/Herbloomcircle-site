@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://herbloomcircle.org/sitemap.xml
