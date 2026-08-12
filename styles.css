@@ -521,42 +521,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .contact-options .co-label { font-weight: 600; }
 .contact-options .co-desc { color: var(--brown); font-size: 14.5px; margin-top: 4px; }
 
-form.interest-form { margin-top: 24px; }
-.form-row { margin-bottom: 20px; }
-.form-row label {
-  display: block;
-  font-size: var(--fs-meta);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
-  color: var(--brown);
-}
-.form-row .required { color: var(--rust); }
-.form-row input, .form-row select, .form-row textarea {
-  width: 100%;
-  padding: 13px 16px;
-  border: 1px solid var(--border-dark);
-  border-radius: 8px;
-  background: var(--white);
-  font-family: var(--sans);
-  font-size: 16px;
-  color: var(--ink);
-}
-.form-row textarea { min-height: 110px; resize: vertical; }
-.form-error { color: var(--rust); font-size: 13.5px; margin-top: 6px; display: none; }
-.form-row.has-error input, .form-row.has-error textarea { border-color: var(--rust); }
-.form-row.has-error .form-error { display: block; }
-.form-note { font-size: 13px; color: var(--brown); margin-top: 18px; }
-.form-success {
-  display: none;
+.contact-cta-card {
+  margin-top: 24px;
+  padding: clamp(28px, 4vw, 44px);
   background: var(--paper);
-  border: 1px solid var(--leaf-green);
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 20px;
+  border: 1px solid var(--border-dark);
+  border-radius: 14px;
 }
-.form-success.is-visible { display: block; }
-.honeypot-field { position: absolute; left: -9999px; }
+.contact-cta-card h3 { font-size: 1.3rem; }
+.contact-cta-card .btn { width: 100%; text-align: center; }
+.form-note { font-size: 13px; color: var(--brown); margin-top: 18px; }
 
 .social-row { display: flex; gap: 14px; margin-top: 20px; }
 .social-row a {

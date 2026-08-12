@@ -266,39 +266,6 @@
     targets.forEach(function (t) { io.observe(t); });
   }
 
-  /* ---------------- Contact form (client-side only; static-form provider TBD) ---------------- */
-  function initForm() {
-    var form = document.getElementById("interest-form");
-    if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      if (form.querySelector(".honeypot-field input").value) return; // bot trap
-
-      var valid = true;
-      var name = form.querySelector("#f-name");
-      var email = form.querySelector("#f-email");
-
-      [name, email].forEach(function (field) {
-        var row = field.closest(".form-row");
-        if (!field.value.trim() || (field.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value))) {
-          row.classList.add("has-error");
-          valid = false;
-        } else {
-          row.classList.remove("has-error");
-        }
-      });
-
-      if (!valid) return;
-
-      var successEl = document.getElementById("form-success");
-      form.reset();
-      successEl.classList.add("is-visible");
-      successEl.focus();
-      successEl.setAttribute("tabindex", "-1");
-    });
-  }
-
   /* ---------------- Open details directly from a #details-<id> URL ---------------- */
   function openFromHash() {
     var hash = window.location.hash;
@@ -314,7 +281,6 @@
     renderEvents();
     initBottomNav();
     initReveal();
-    initForm();
     openFromHash();
 
     var overlay = document.getElementById("details-overlay");
