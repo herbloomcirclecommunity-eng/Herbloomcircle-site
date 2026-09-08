@@ -1,0 +1,134 @@
+:root {
+  --cream: #faf4ee;
+  --blush: #f3e6de;
+  --ink: #2c221c;
+  --brown: #6f5c4d;
+  --rose: #b06a80;
+  --rose-deep: #96556a;
+  --border: rgba(44,34,28,0.12);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--blush) 0%, var(--cream) 55%);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3vw, 32px) clamp(20px, 6vw, 48px);
+  text-align: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: clamp(12px, 2vw, 20px);
+}
+.brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.brand span { font-family: var(--serif); font-size: 17px; color: var(--ink); }
+.brand .lb { color: var(--rose-deep); }
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.14;
+  max-width: 26ch;
+  margin: 0 0 12px;
+}
+h1 em { font-style: italic; color: var(--rose-deep); }
+
+.mission {
+  max-width: 56ch;
+  color: var(--brown);
+  font-size: clamp(14.5px, 1.3vw, 16.5px);
+  margin: 0 0 18px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--rose);
+  color: #fffdfb;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: background .2s, transform .2s;
+  margin-bottom: clamp(18px, 3vw, 28px);
+}
+.cta:hover { background: var(--rose-deep); transform: translateY(-2px); }
+
+.photo-pair {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  max-width: 460px;
+  width: 100%;
+}
+.photo-pair img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(44,34,28,0.16);
+}
+
+footer {
+  margin-top: clamp(16px, 3vw, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.social-row { display: flex; gap: 12px; }
+.social-row a {
+  width: 34px; height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--brown);
+}
+.social-row a:hover { background: var(--ink); color: var(--cream); }
+.legal { font-size: 12.5px; color: var(--brown); }
+
+@media (max-width: 520px) {
+  .photo-pair { flex-direction: column; max-width: 320px; }
+}
+
+/* Hibiscus decorative accents */
+.hibiscus {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 8px 16px rgba(168,13,64,0.18));
+}
+.hib-tl { top: -30px; left: -34px; width: clamp(90px, 14vw, 160px); transform: rotate(-12deg); }
+.hib-br { bottom: -36px; right: -30px; width: clamp(110px, 17vw, 190px); transform: rotate(8deg); }
+.hib-tr { top: 40px; right: -46px; width: clamp(70px, 10vw, 120px); transform: rotate(20deg); opacity: 0.7; display: none; }
+
+@media (min-width: 900px) {
+  .hib-tr { display: block; }
+}
+@media (max-width: 520px) {
+  .hib-tl { width: 90px; top: -22px; left: -26px; }
+  .hib-br { width: 100px; bottom: -24px; right: -22px; }
+}
+
+.page, footer { position: relative; z-index: 1; }
