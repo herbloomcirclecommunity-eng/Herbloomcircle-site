@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>HerBloomCircle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF1E6;
+    --ink:#3B2432;
+    --hibiscus-deep:#9E1E4C;
+    --sage-deep:#4F6A48;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:'Jost',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    height:100vh;
+    width:100vw;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .floral{position:absolute;pointer-events:none;z-index:1;overflow:visible;}
+  .floral img{display:block;width:100%;height:auto;}
+
+  .floral-top-left{top:-1vh;left:-1.5vw;width:min(50vw,500px);}
+  .floral-top-left img{transform:scaleX(-1);filter:drop-shadow(0 8px 16px rgba(59,36,50,0.18));}
+
+  .floral-top-right{top:-1vh;right:-1.5vw;width:min(50vw,500px);}
+  .floral-top-right img{filter:drop-shadow(0 8px 16px rgba(59,36,50,0.18));}
+
+  .floral-bottom-left{bottom:-1.5vh;left:-1.5vw;width:min(42vw,440px);}
+  .floral-bottom-left img{filter:drop-shadow(0 -6px 14px rgba(59,36,50,0.14));}
+
+  .floral-bottom-right{bottom:-1.5vh;right:-1.5vw;width:min(42vw,440px);}
+  .floral-bottom-right img{transform:scaleX(-1);filter:drop-shadow(0 -6px 14px rgba(59,36,50,0.14));}
+
+  .content{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:clamp(10px,1.6vh,18px);
+    padding:4vh 6vw 3vh;
+    max-width:720px;
+  }
+  .wordmark{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(15px,2.1vh,19px);
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--hibiscus-deep);
+    font-weight:600;
+  }
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:clamp(24px,4.4vh,42px);
+    line-height:1.18;
+    color:var(--ink);
+    max-width:15ch;
+  }
+  .mission{
+    font-size:clamp(13px,1.7vh,16px);
+    line-height:1.55;
+    color:var(--ink);
+    opacity:0.82;
+    max-width:46ch;
+  }
+  .cta{
+    display:inline-block;
+    margin-top:clamp(2px,0.4vh,6px);
+    padding:clamp(10px,1.6vh,15px) clamp(26px,3vw,36px);
+    background:var(--hibiscus-deep);
+    color:var(--cream);
+    text-decoration:none;
+    font-size:clamp(12px,1.5vh,14px);
+    letter-spacing:0.06em;
+    border-radius:999px;
+    font-weight:500;
+    box-shadow:0 6px 18px rgba(158,30,76,0.28);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(158,30,76,0.34);}
+  .cta:focus-visible{outline:3px solid var(--sage-deep);outline-offset:3px;}
+
+  .photos{
+    display:flex;
+    gap:clamp(10px,1.6vw,18px);
+    margin-top:clamp(4px,0.8vh,10px);
+  }
+  .photos img{
+    width:clamp(110px,15vw,170px);
+    height:clamp(85px,11.5vh,130px);
+    object-fit:cover;
+    border-radius:14px;
+    border:3px solid #ffffffcc;
+    box-shadow:0 8px 22px rgba(59,36,50,0.16);
+  }
+
+  footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    margin-top:clamp(4px,1vh,10px);
+    font-size:clamp(10px,1.2vh,12px);
+    color:var(--ink);
+    opacity:0.65;
+  }
+  .socials{display:flex;gap:14px;}
+  .socials a{color:var(--hibiscus-deep);text-decoration:none;font-weight:500;opacity:0.85;}
+  .socials a:hover{opacity:1;}
+
+  @media (max-height:680px){
+    .photos img{height:clamp(70px,9vh,100px);}
+    h1{font-size:clamp(20px,3.6vh,30px);}
+    .content{gap:8px;padding:2vh 6vw;}
+    .floral-top-left,.floral-top-right{width:min(40vw,360px);}
+    .floral-bottom-left,.floral-bottom-right{width:min(32vw,300px);}
+  }
+  @media (max-width:480px){
+    .floral-top-left,.floral-top-right{width:60vw;}
+    .floral-bottom-left,.floral-bottom-right{width:50vw;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="floral floral-top-left" aria-hidden="true">
+    <img src="assets/top-flowers.png" alt="">
+  </div>
+  <div class="floral floral-top-right" aria-hidden="true">
+    <img src="assets/top-flowers.png" alt="">
+  </div>
+  <div class="floral floral-bottom-left" aria-hidden="true">
+    <img src="assets/bottom-flowers.png" alt="">
+  </div>
+  <div class="floral floral-bottom-right" aria-hidden="true">
+    <img src="assets/bottom-flowers.png" alt="">
+  </div>
+
+  <main class="content">
+    <p class="wordmark">HerBloomCircle</p>
+    <h1>Creating spaces where girls, families &amp; communities bloom.</h1>
+    <p class="mission">We design intentional wellness, empowerment, and connection experiences — helping girls feel seen, supported, and confident, and helping communities come together with purpose.</p>
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe3m8mfGSTwkr_VuUw5ltXuM6Shiraev7TwSn0l4P6TX_uFPQ/viewform" target="_blank" rel="noopener">Work With HerBloomCircle</a>
+
+    <div class="photos">
+      <img src="assets/hug.jpg" alt="A mentor embracing a young girl at a HerBloomCircle experience">
+      <img src="assets/bags.jpg" alt="Thoughtfully styled take-home bags prepared for HerBloomCircle participants">
+    </div>
+
+    <footer>
+      <div class="socials">
+        <a href="https://instagram.com/herbloomcircle" target="_blank" rel="noopener">@herbloomcircle</a>
+        <a href="https://tiktok.com/@herbloomcircle1" target="_blank" rel="noopener">@herbloomcircle1</a>
+      </div>
+      <p>&copy; 2026 HerBloomCircle LLC. All rights reserved.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
